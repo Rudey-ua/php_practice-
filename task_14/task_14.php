@@ -1,4 +1,5 @@
 <?php session_start();?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +47,6 @@
                                     <?php if($_SESSION['status'] == 'Authorized'):?>
                                         <div class="alert alert-success fade show" role="alert">
                                             Вы успешно авторизовались!
-                                            <?php unset($_SESSION['status']);?>
                                         </div>
                                     <?php endif;?>
 
