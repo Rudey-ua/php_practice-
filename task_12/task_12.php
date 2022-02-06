@@ -52,7 +52,10 @@
 
                                     <?php if (isset($_SESSION['danger'])):?>
                                         <div class="alert alert-danger fade show" role="alert">
-                                            <?= $_SESSION['danger'];?>         
+                                            <?php 
+                                                echo $_SESSION['danger'];
+                                                unset($_SESSION['danger']);
+                                            ?>      
                                         </div>
                                     <?php endif;?>
 
