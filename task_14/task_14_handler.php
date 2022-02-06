@@ -17,6 +17,7 @@ function Authorization($pdo, $email, $password) {
     $user = selectData($pdo, $email);
 
     if(!empty($user['email']) && password_verify($password, $user['password'])) {
+        $_SESSION['name'] = $user['name'];
         return $_SESSION['status'] = 'Authorized';
     }
     else{
@@ -26,5 +27,5 @@ function Authorization($pdo, $email, $password) {
 
 Authorization($pdo, $email, $password);
 
-header("Location: task_14.php");
+header("Location: task_15.php");
 

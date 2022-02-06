@@ -1,4 +1,11 @@
-<?php session_start();?>
+<?php 
+session_start();
+
+if(!isset($_SESSION['status'])) {
+    header('Location: task_14.php');
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +32,7 @@
                 <div id="panel-1" class="panel">
                     <div class="panel-hdr">
                         <h2>
-                            Авторизация
+                            Задание
                         </h2>
                         <div class="panel-toolbar">
                             <button class="btn btn-panel waves-effect waves-themed" data-action="panel-collapse" data-toggle="tooltip" data-offset="0,10" data-original-title="Collapse"></button>
@@ -36,30 +43,10 @@
                         <div class="panel-content">
                             <div class="panel-content">
                                 <div class="form-group">
-
-                                    <?php if($_SESSION['status'] == 'Not authorized'):?>
-                                        <div class="alert alert-danger fade show" role="alert">
-                                            Неверный логин или пароль
-                                            <?php unset($_SESSION['status']);?>
-                                        </div>
-                                    <?php endif;?>
-
-                                    <?php if($_SESSION['status'] == 'Authorized'):?>
-                                        <div class="alert alert-success fade show" role="alert">
-                                            Вы успешно авторизовались!
-                                        </div>
-                                    <?php endif;?>
-
-                                    <form action="task_14_handler.php" method="post">
-                                        <div class="form-group">
-                                        	<label class="form-label" for="simpleinput">Email</label>
-                                        <input type="text" name="email" id="simpleinput" class="form-control">
-                                        </div>
-
-                                        <label class="form-label" for="simpleinput">Password</label>
-                                        <input type="password" name="password" id="simpleinput" class="form-control">
-                                        <button class="btn btn-success mt-3" type="submit">Submit</button>
-                                    </form>
+                                    <div class="alert alert-success fade show" role="alert">
+                                        Здравствуйте, <?= $_SESSION['name']?>.
+                                    </div>
+                                    <a href="task_15_handler.php" class="btn btn-info">Выйти</a>
                                 </div>
                             </div>
                         </div>
