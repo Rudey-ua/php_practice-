@@ -37,21 +37,25 @@
                         <div class="panel-content">
                             <div class="panel-content">
                                 <div class="form-group">
-                                    <div class="alert alert-info fade show" role="alert">
-                                        <?php 
-                                            if(isset($_SESSION['message'])):
-                                                echo $_SESSION['message'];
-                                            endif;
+                                    
+                                    <?php if(!isset($_SESSION['danger']) && !isset($_SESSION['message'])):?>
+                                        <div class="alert alert-info fade show" role="alert">
+                                            <?= "Ваше сообщение выводится тут";?>
+                                        </div>
+                                    <?php endif;?>
 
-                                            if (isset($_SESSION['danger'])):
-                                                echo $_SESSION['danger'];
-                                            endif;
+                                    <?php if (isset($_SESSION['message'])):?>
+                                        <div class="alert alert-success fade show" role="alert">
+                                            <?= $_SESSION['message'];?>
+                                        </div>
+                                    <?php endif;?>
 
-                                            if(!isset($_SESSION['danger']) && !isset($_SESSION['message'])):
-                                                echo "Ваше сообщение выводится тут";
-                                            endif;       
-                                        ?>
-                                    </div>
+                                    <?php if (isset($_SESSION['danger'])):?>
+                                        <div class="alert alert-danger fade show" role="alert">
+                                            <?= $_SESSION['danger'];?>         
+                                        </div>
+                                    <?php endif;?>
+
                                     <form action="task_12_handler.php" method="post">
                                         <div class="form-group">
                                         	<label class="form-label" for="simpleinput">Text</label>
