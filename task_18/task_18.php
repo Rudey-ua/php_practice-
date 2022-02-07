@@ -107,7 +107,6 @@ $images = $statement->fetchALL(PDO::FETCH_ASSOC);
             initApp.listFilter($('#js_default_list'), $('#js_default_list_filter'));
             // custom response message
             initApp.listFilter($('#js-list-msg'), $('#js-list-msg-filter'));
-            let a = 1;
         </script>
     </body>
 </html>
