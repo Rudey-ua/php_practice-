@@ -53,7 +53,7 @@ $images = $statement->fetchALL(PDO::FETCH_ASSOC);
                                             </div>
                                         <?php endif;?>
 
-                                        <form action="task_16_handler.php" enctype="multipart/form-data" method="post">
+                                        <form action="task_18_handler.php" enctype="multipart/form-data" method="post">
                                             <div class="form-group">
                                                 <label class="form-label" for="simpleinput">Image</label>
                                             <input type="file" name="image[]" multiple id="simpleinput" class="form-control">
